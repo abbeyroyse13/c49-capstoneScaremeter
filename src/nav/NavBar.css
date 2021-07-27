@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #808080;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+.navLink {
+    float: right;
+    padding: 5px 5px;
+}
+
+.navButton {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}

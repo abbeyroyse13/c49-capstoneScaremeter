@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { Homepage } from "./Home/Home"
 import { HorrorItemList } from "./horrorItems/horrorItemList"
 import { HorrorItemProvider } from "./horrorItems/horrorItemProvider"
+import { HorrorItemDetail } from "./horrorItems/horrorItemDetail"
 
 export const ApplicationViews = () => {
     return (
@@ -16,6 +17,10 @@ export const ApplicationViews = () => {
             <HorrorItemProvider>
                 <Route exact path="/">
                     <HorrorItemList />
+                </Route>
+
+                <Route exact path="/horrorItems/detail/:horrorItemId(\d+)">
+                    <HorrorItemDetail />
                 </Route>
             </HorrorItemProvider>
         </>
