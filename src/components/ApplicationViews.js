@@ -1,6 +1,8 @@
-import React from "react" 
+import React from "react"
 import { Route } from "react-router-dom"
 import { Homepage } from "./Home/Home"
+import { HorrorItemList } from "./horrorItems/horrorItemList"
+import { HorrorItemProvider } from "./horrorItems/horrorItemProvider"
 
 export const ApplicationViews = () => {
     return (
@@ -10,6 +12,12 @@ export const ApplicationViews = () => {
             <Route exact path="/">
                 <Homepage />
             </Route>
+
+            <HorrorItemProvider>
+                <Route exact path="/">
+                    <HorrorItemList />
+                </Route>
+            </HorrorItemProvider>
         </>
     )
 }

@@ -4,11 +4,11 @@ export const Homepage = () => {
     return (
 <>
         
-    <h1>Welcome to ScareMeter!</h1>
-    <button to="/movies">Movies</button>
-    <button to="/shows">Shows</button>
-    <button to="/games">Games</button>
-    <button to="/books">Books</button>
+    <h1>Welcome to ScareMeter! Select A Category OR Browse All Content Below!</h1>
+    <button>Movies</button>
+    <button>Shows</button>
+    <button>Games</button>
+    <button>Books</button>
 </>
     )
 }

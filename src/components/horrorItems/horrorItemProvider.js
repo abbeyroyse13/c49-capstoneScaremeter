@@ -1,8 +1,8 @@
 import React, { useState, createContext } from "react"
 
-export const horrorItemContext = createContext()
+export const HorrorItemContext = createContext()
 
-export const horrorItemProvider = (props) => {
+export const HorrorItemProvider = (props) => {
     const [horrorItems, setHorrorItems] = useState([])
 
     const getHorrorItems = () => {
@@ -11,11 +11,16 @@ export const horrorItemProvider = (props) => {
         .then(setHorrorItems)
     }
 
+    const getHorrorItemById = (id) => {
+        return fetch(`http://localhost:8088/horrorItems/${id}`)
+        .then(res => res.json())
+    }
+
     return (
-        <horrorItemContext.Provider value={{
-            horrorItems, getHorrorItems
+        <HorrorItemContext.Provider value={{
+            horrorItems, getHorrorItems, getHorrorItemById
         }}>
             {props.children}
-        </horrorItemContext.Provider>
+        </HorrorItemContext.Provider>
     )
 }
