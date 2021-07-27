@@ -1,8 +1,8 @@
 import React, { useState, createContext } from "react"
 
-export const horrorItemContext = createContext()
+export const HorrorItemContext = createContext()
 
-export const horrorItemProvider = (props) => {
+export const HorrorItemProvider = (props) => {
     const [horrorItems, setHorrorItems] = useState([])
 
     const getHorrorItems = () => {
@@ -12,10 +12,10 @@ export const horrorItemProvider = (props) => {
     }
 
     return (
-        <horrorItemContext.Provider value={{
+        <HorrorItemContext.Provider value={{
             horrorItems, getHorrorItems
         }}>
             {props.children}
-        </horrorItemContext.Provider>
+        </HorrorItemContext.Provider>
     )
 }
