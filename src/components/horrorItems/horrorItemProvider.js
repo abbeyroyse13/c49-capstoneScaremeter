@@ -11,9 +11,14 @@ export const HorrorItemProvider = (props) => {
         .then(setHorrorItems)
     }
 
+    const getHorrorItemById = (id) => {
+        return fetch(`http://localhost:8088/horrorItems/${id}`)
+        .then(res => res.json())
+    }
+
     return (
         <HorrorItemContext.Provider value={{
-            horrorItems, getHorrorItems
+            horrorItems, getHorrorItems, getHorrorItemById
         }}>
             {props.children}
         </HorrorItemContext.Provider>

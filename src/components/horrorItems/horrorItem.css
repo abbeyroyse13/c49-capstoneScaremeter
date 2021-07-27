@@ -1,0 +1,16 @@
+.horror-image {
+    align-items: center;
+    padding: 10px 10px 40px 10px;
+    margin: 30px 70px;
+    background-color: #CC5803;
+    border-radius: 25px;
+}
+
+img {
+    width: 10%;
+    height: auto;
+}
+
+.save-btn {
+    background-color: chartreuse;
+}
