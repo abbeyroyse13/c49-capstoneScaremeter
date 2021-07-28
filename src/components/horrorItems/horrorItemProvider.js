@@ -6,7 +6,7 @@ export const HorrorItemProvider = (props) => {
     const [horrorItems, setHorrorItems] = useState([])
 
     const getHorrorItems = () => {
-        return fetch("http://localhost:8088/horrorItems?_expand=horrorCategory")
+        return fetch("http://localhost:8088/horrorItems")
         .then(res => res.json())
         .then(setHorrorItems)
     }
@@ -22,6 +22,13 @@ export const HorrorItemProvider = (props) => {
         .then(getHorrorItems)
     }
 
+    const deleteHorrorItem = horrorItemId => {
+        return fetch(`http://localhost:8088/horrorItems/${horrorItemId}`, {
+            method: "DELETE"
+        })
+        .then(getHorrorItems)
+    }
+
     const getHorrorItemById = (id) => {
         return fetch(`http://localhost:8088/horrorItems/${id}`)
         .then(res => res.json())
@@ -29,7 +36,7 @@ export const HorrorItemProvider = (props) => {
 
     return (
         <HorrorItemContext.Provider value={{
-            horrorItems, getHorrorItems, getHorrorItemById, addHorrorItem
+            horrorItems, getHorrorItems, getHorrorItemById, addHorrorItem, deleteHorrorItem
         }}>
             {props.children}
         </HorrorItemContext.Provider>

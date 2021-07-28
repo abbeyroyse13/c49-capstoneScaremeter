@@ -16,16 +16,15 @@ export const ApplicationViews = () => {
             <Route exact path="/">
                 <Homepage />
             </Route>
-
+            
             <HorrorItemProvider>
-                <Route exact path="/">
-                    <HorrorItemList />
-                </Route>
-
                 <Route exact path="/horrorPosts">
                     <MyPosts />
                 </Route>
 
+                <Route exact path="/">
+                    <HorrorItemList />
+                </Route>
 
                 <Route exact path="/horrorItems/detail/:horrorItemId(\d+)">
                     <HorrorItemDetail />
