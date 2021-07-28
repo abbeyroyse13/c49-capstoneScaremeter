@@ -6,7 +6,7 @@ export const HorrorItemProvider = (props) => {
     const [horrorItems, setHorrorItems] = useState([])
 
     const getHorrorItems = () => {
-        return fetch("http://localhost:8088/horrorItems?_embed=horrorCategory")
+        return fetch("http://localhost:8088/horrorItems?_expand=horrorCategory")
         .then(res => res.json())
         .then(setHorrorItems)
     }
