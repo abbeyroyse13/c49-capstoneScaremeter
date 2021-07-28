@@ -6,9 +6,20 @@ export const HorrorItemProvider = (props) => {
     const [horrorItems, setHorrorItems] = useState([])
 
     const getHorrorItems = () => {
-        return fetch("http://localhost:8088/horrorItems")
+        return fetch("http://localhost:8088/horrorItems?_embed=horrorCategory")
         .then(res => res.json())
         .then(setHorrorItems)
+    }
+
+    const addHorrorItem = (horrorItemObj) => {
+        return fetch("http://localhost:8088/horrorItems", {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(horrorItemObj)
+        })
+        .then(getHorrorItems)
     }
 
     const getHorrorItemById = (id) => {
@@ -18,7 +29,7 @@ export const HorrorItemProvider = (props) => {
 
     return (
         <HorrorItemContext.Provider value={{
-            horrorItems, getHorrorItems, getHorrorItemById
+            horrorItems, getHorrorItems, getHorrorItemById, addHorrorItem
         }}>
             {props.children}
         </HorrorItemContext.Provider>
