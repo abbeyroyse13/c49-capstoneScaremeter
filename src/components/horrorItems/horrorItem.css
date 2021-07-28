@@ -14,3 +14,7 @@ img {
 .save-btn {
     background-color: chartreuse;
 }
+
+.delete-btn {
+    background-color: red;
+}
