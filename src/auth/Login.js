@@ -23,7 +23,7 @@ export const Login = props => {
             .then(exists => {
                 if (exists) {
                     localStorage.setItem("scaremeter_user", exists.id)
-                    history.push("/")
+                    history.push("/horrorItems")
                 } else {
                     existDialog.current.showModal()
                 }

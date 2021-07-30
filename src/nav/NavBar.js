@@ -7,7 +7,7 @@ export const NavBar = (props) => {
         <nav className="navbar">
             <ul className="scareLogo">
                 <li className="navLogo">
-                    <a href="/"><img src="" alt="Logo"/></a>
+                    <Link className="navButton" to="/horrorItems">Home</Link>
                 </li>
                 <li className="navLink">
                     <Link className="navButton" to="/Login">Logout</Link>
