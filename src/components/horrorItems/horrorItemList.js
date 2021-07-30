@@ -24,15 +24,24 @@ export const HorrorItemList = () => {
     // }
 
     return (
-        <div className="horrorItems">
-            {console.log("HorrorItemList: Render", horrorItems)}
-            <h2>Horror Items</h2>
-            {
-                horrorItems.map(horrorItem => {
-                    return <HorrorItemCard key={horrorItem.id} horrorItem={horrorItem} />
-                })
-            }
-        </div>
+        <>
+
+            <h1>Welcome to ScareMeter! Select A Category OR Browse All Content Below!</h1>
+            <button>Movies</button>
+            <button>Shows</button>
+            <button>Games</button>
+            <button>Books</button>
+            <div className="horrorItems">
+                {console.log("HorrorItemList: Render", horrorItems)}
+                <h2>Horror Items</h2>
+                {
+                    horrorItems.map(horrorItem => {
+                        { console.log("horrorItem", horrorItem) }
+                        return <HorrorItemCard key={horrorItem.id} horrorItem={horrorItem} />
+                    })
+                }
+            </div>
+        </>
     )
 }
 
