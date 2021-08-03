@@ -7,8 +7,8 @@ import { HorrorItemDetail } from "./horrorItems/horrorItemDetail"
 import { MyPosts } from "../nav/myPosts"
 import { HorrorItemForm } from "./horrorItems/horrorItemForm"
 import { CategoryProvider } from "./horrorCategories/horrorCategoryProvider"
-import { FavoritesProvider } from "./horrorFavorites/horrorFavoritesProvider"
-import { MyList } from "../nav/myList"
+import { FavoritesProvider } from "../components/horrorFavorites/horrorFavoritesProvider"
+import { MyList } from "../components/horrorFavorites/myList"
 
 export const ApplicationViews = () => {
     return (
@@ -36,7 +36,7 @@ export const ApplicationViews = () => {
                         </Route>
                     </CategoryProvider>
 
-                    <Route exact path="/horrorList">
+                    <Route exact path="/horrorFavorites">
                         <MyList />
                     </Route>
                 </FavoritesProvider>

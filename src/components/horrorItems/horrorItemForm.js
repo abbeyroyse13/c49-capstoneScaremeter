@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom"
 
 export const HorrorItemForm = () => {
     const { addHorrorItem } = useContext(HorrorItemContext)
-    const { categories, getCategories } = useContext(CategoryContext)
+    const { categorys, getCategories } = useContext(CategoryContext)
 
     const [horrorItem, setHorrorItem] = useState({
         title: "",
@@ -70,7 +70,7 @@ export const HorrorItemForm = () => {
                     <label htmlFor="category">Select a Category:</label>
                     <select name="categoryId" id="categoryId" className="form-control" value={horrorItem.categoryId} onChange={handleControlledInputChange}>
                         <option value="0">Choose Category</option>
-                        {categories.map(c => (
+                        {categorys.map(c => (
                             <option key={c.id} value={c.id}>
                                 {c.name}
                             </option>
