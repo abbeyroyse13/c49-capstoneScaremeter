@@ -27,6 +27,7 @@ export const MyPosts = () => {
                 onClick={() => { history.push("/horrorItems/add") }}>
                 +
             </button>
+            <h1 className="">Horror Item Posts</h1>
             <div>
                 {horrorItems.map(horrorItemPost => {
                     return <HorrorItemCard key={horrorItemPost.id} horrorItem={horrorItemPost} />
