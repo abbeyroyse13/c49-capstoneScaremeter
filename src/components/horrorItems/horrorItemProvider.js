@@ -11,6 +11,11 @@ export const HorrorItemProvider = (props) => {
         .then(setHorrorItems)
     }
 
+    const getHorrorPosts = (getCurrentUser) => {
+        return fetch (`http://localhost:8088/horrorItems/?userId=${getCurrentUser}`)
+        .then(response => response.json())
+    }
+
     const addHorrorItem = (horrorItemObj) => {
         return fetch("http://localhost:8088/horrorItems", {
             method: "POST", 
@@ -36,7 +41,7 @@ export const HorrorItemProvider = (props) => {
 
     return (
         <HorrorItemContext.Provider value={{
-            horrorItems, getHorrorItems, getHorrorItemById, addHorrorItem, deleteHorrorItem
+            horrorItems, getHorrorItems, getHorrorItemById, addHorrorItem, deleteHorrorItem, getHorrorPosts
         }}>
             {props.children}
         </HorrorItemContext.Provider>

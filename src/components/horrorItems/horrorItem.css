@@ -11,10 +11,12 @@ img {
     height: auto;
 }
 
-.save-btn {
+.save-btn,
+.add-btn {
     background-color: chartreuse;
 }
 
-.delete-btn {
+.delete-btn,
+.remove-btn {
     background-color: red;
 }
