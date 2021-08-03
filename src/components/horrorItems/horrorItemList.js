@@ -35,7 +35,7 @@ export const HorrorItemList = () => {
                 {console.log("HorrorItemList: Render", horrorItems)}
                 <h2>Horror Items</h2>
                 {
-                    horrorItems.map(horrorItem => {
+                    horrorItems?.map(horrorItem => {
                         { console.log("horrorItem", horrorItem) }
                         return <HorrorItemCard key={horrorItem.id} horrorItem={horrorItem} />
                     })

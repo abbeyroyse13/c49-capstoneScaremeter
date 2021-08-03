@@ -1,6 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { Homepage } from "./Home/Home"
+// import { Homepage } from "./Home/Home"
 import { HorrorItemList } from "./horrorItems/horrorItemList"
 import { HorrorItemProvider } from "./horrorItems/horrorItemProvider"
 import { HorrorItemDetail } from "./horrorItems/horrorItemDetail"

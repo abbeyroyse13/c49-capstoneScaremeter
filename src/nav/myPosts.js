@@ -1,14 +1,37 @@
-import React from "react"
-import { useHistory } from "react-router-dom"
+import React, { useState, useEffect, useContext } from "react"
+import { HorrorItemContext } from "../components/horrorItems/horrorItemProvider"
+import { HorrorItemCard } from "../components/horrorItems/horrorItemCard";
+import { useHistory } from "react-router";
 
 export const MyPosts = () => {
-    const history = useHistory()
+    const { getHorrorPosts } = useContext(HorrorItemContext)
+    const [horrorItems, setHorrorItems] = useState([]);
+    const getCurrentUser = JSON.parse(localStorage.getItem("scaremeter_user"))
+
+    const history = useHistory();
+
+    const getAllHorrorPosts = () => {
+        return getHorrorPosts(getCurrentUser).then(ItemsFromAPI => {
+            setHorrorItems(ItemsFromAPI)
+        });
+    };
+
+    useEffect(() => {
+        getAllHorrorPosts();
+    }, []);
 
     return (
-        <button type="button"
-            className="add-btn"
-            onClick={() => { history.push("/horrorItems/add") }}>
-            +
-        </button>
+        <>
+            <button type="button"
+                className="add-btn"
+                onClick={() => { history.push("/horrorItems/add") }}>
+                +
+            </button>
+            <div>
+                {horrorItems.map(horrorItemPost => {
+                    return <HorrorItemCard key={horrorItemPost.id} horrorItem={horrorItemPost} />
+                })}
+            </div>
+        </>
     )
 }
