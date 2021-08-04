@@ -9,12 +9,13 @@ import { HorrorItemForm } from "./horrorItems/horrorItemForm"
 import { CategoryProvider } from "./horrorCategories/horrorCategoryProvider"
 import { FavoritesProvider } from "../components/horrorFavorites/horrorFavoritesProvider"
 import { MyList } from "../components/horrorFavorites/myList"
+import { UserProvider } from "./userData/userDataProvider"
 
 export const ApplicationViews = () => {
     return (
 
         <>
-
+        <UserProvider>
             <HorrorItemProvider>
                 <FavoritesProvider>
                     <Route exact path="/horrorPosts">
@@ -41,6 +42,7 @@ export const ApplicationViews = () => {
                     </Route>
                 </FavoritesProvider>
             </HorrorItemProvider>
+            </UserProvider>
         </>
     )
 }

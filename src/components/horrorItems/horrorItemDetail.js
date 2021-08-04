@@ -3,11 +3,15 @@ import { HorrorItemContext } from "./horrorItemProvider"
 import { useHistory, useParams } from "react-router-dom"
 import "./horrorItem.css"
 import ProgressBar from "react-bootstrap/ProgressBar"
+import { UserContext } from "../userData/userDataProvider"
 
 export const HorrorItemDetail = () => {
     const { getHorrorItemById, deleteHorrorItem } = useContext(HorrorItemContext)
+    const { userItems, getUserItems } = useContext(UserContext)
 
     const [horrorItem, setHorrorItem] = useState({})
+    const [userItem, setUserItem] = useState({})
+    const [value, setValue] = useState()
     const history = useHistory()
 
     const { horrorItemId } = useParams()
@@ -27,35 +31,40 @@ export const HorrorItemDetail = () => {
             })
     }
 
-    // class ProgressBar extends React.Component {
-    //     constructor(props) {
-    //         super(props);
-    //         this.state = {
-    //             width: 0,
-    //             score: 0
-    //         };
+    useEffect(() => {
+        console.log("useEffect", userItem)
+        getUserItems().then(() => { 
+            const UserRate = userItems.find(userItem => userItem.horrorItemId === horrorItem.id)
+            setUserItem(UserRate) 
+            console.log(userItem)
+        })
+    }, [horrorItem])
 
-    //         handleClick = (e) => {
-    //             this.setState(state => {
-    //                 if (state.width + 10 === 100) {
-    //                     return { width: 0, score: state.score + 1 };
-    //                 }
-    //                 return { width: state.width + 10 };
-    //             });
-    //         }
+    const handleClick = (e) => {
+        e.preventDefault()
 
-            return (
-                <section className="horrorDetail">
-                    <h3 className="horrortitle"> {horrorItem.title} </h3>
-                    <div className="releaseDate"> {horrorItem.releaseDate} </div>
-                    <div className="description"> {horrorItem.description} </div>
-                    <div className="horrorCategory"> {horrorItem.category} </div>
-                    <img src={horrorItem.img} className="horrorImg" />
-                    <ProgressBar min={25} max={100} now={50} animated variant="success" />
-                    {/* <button onClick={(e) => { handleClick(e) }} type="btn" >SCAREME!</button> */}
-                    <button className="delete-btn" onClick={handleDelete}>Delete</button>
-                </section>
-            )
+        const currentValue = parseInt(e.target.now)
+        let updatedValue = 0
+        if (currentValue < 100) {
+            updatedValue = currentValue + 25
+        } else {
+            updatedValue = 0
         }
-//     }
-// }
+        setValue(updatedValue)
+    }
+
+    return (
+        <>
+            <section className="horrorDetail">
+                <h3 className="horrortitle"> {horrorItem.title} </h3>
+                <div className="releaseDate"> {horrorItem.releaseDate} </div>
+                <div className="description"> {horrorItem.description} </div>
+                <div className="horrorCategory"> {horrorItem.category} </div>
+                <img src={horrorItem.img} className="horrorImg" />
+                <ProgressBar min={0} max={100} now={userItem?.rating} animated variant="success" />
+                <button>SCAREMETER!</button>
+                <button className="delete-btn" onClick={handleDelete}>Delete</button>
+            </section>
+        </>
+    )
+}
