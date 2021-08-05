@@ -63,7 +63,7 @@ export const HorrorItemDetail = () => {
                 <img src={horrorItem.img} className="horrorImg" />
                 <ProgressBar min={0} max={100} now={userItem?.rating} animated variant="success" />
                 <button>SCAREMETER!</button>
-                <button className="delete-btn" onClick={handleDelete}>Delete</button>
+                <button className="delete-btn" onClick={() => { handleDelete() }}>Delete</button>
             </section>
         </>
     )
