@@ -41,7 +41,7 @@ export const HorrorItemForm = () => {
             img: horrorItem.img
         }
         addHorrorItem(newHorrorItem)
-            .then(() => history.push("/horrorPosts"))
+            .then(() => history.push("/horrorItems"))
     }
 
     return (

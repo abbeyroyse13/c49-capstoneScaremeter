@@ -26,7 +26,7 @@ export const HorrorItemList = () => {
     return (
         <>
 
-            <h1>Welcome to ScareMeter! Select A Category OR Browse All Content Below!</h1>
+            <h1>Welcome to ScareMeter! Browse All Content Below! Our Content Includes:</h1>
             <button>Movies</button>
             <button>Shows</button>
             <button>Games</button>
