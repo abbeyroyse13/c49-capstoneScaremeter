@@ -13,7 +13,7 @@ export const HorrorFavoritesCard = ({horrorItemFavorite}) => {
     // console.log(horrorItemFavorite.horrorItemId)
 
     const handleDelete = () => {
-        removeHorrorFavorite(horrorItemFavorite.horrorItem.id)
+        removeHorrorFavorite(horrorItemFavorite.id)
         .then(() => {
             history.push("/horrorFavorites")
         })

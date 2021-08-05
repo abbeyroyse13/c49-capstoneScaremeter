@@ -32,7 +32,7 @@ export const HorrorItemForm = () => {
         event.preventDefault()
 
         const categoryId = parseInt(horrorItem.categoryId)
-
+// window alert?
         const newHorrorItem = {
             title: horrorItem.title,
             releaseDate: horrorItem.releaseDate,
