@@ -25,21 +25,22 @@ export const HorrorItemList = () => {
 
     return (
         <>
-
-            <h1>Welcome to ScareMeter! Browse All Content Below! Our Content Includes:</h1>
+            <div className="homePage">
+            <h1 className="welcome">Welcome to ScareMeter! Browse All Content Below! Our Content Includes:</h1>
             <button>Movies</button>
             <button>Shows</button>
             <button>Games</button>
             <button>Books</button>
             <div className="horrorItems">
                 {console.log("HorrorItemList: Render", horrorItems)}
-                <h2>Horror Items</h2>
+                <h2 className="title">Horror Items</h2>
                 {
                     horrorItems?.map(horrorItem => {
                         { console.log("horrorItem", horrorItem) }
                         return <HorrorItemCard key={horrorItem.id} horrorItem={horrorItem} />
                     })
                 }
+            </div>
             </div>
         </>
     )

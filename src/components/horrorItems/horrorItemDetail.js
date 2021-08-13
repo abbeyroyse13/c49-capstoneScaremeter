@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react"
 import { HorrorItemContext } from "./horrorItemProvider"
 import { useHistory, useParams } from "react-router-dom"
 import "./horrorItem.css"
-import ProgressBar from "react-bootstrap/ProgressBar"
 import { UserContext } from "../userData/userDataProvider"
 
 export const HorrorItemDetail = () => {
@@ -40,6 +39,7 @@ export const HorrorItemDetail = () => {
         })
     }, [horrorItem])
 
+    // found an alternate way to do this (see progress bar component)
     const handleClick = (e) => {
         e.preventDefault()
 
@@ -61,8 +61,6 @@ export const HorrorItemDetail = () => {
                 <div className="description"> {horrorItem.description} </div>
                 <div className="horrorCategory"> {horrorItem.category} </div>
                 <img src={horrorItem.img} className="horrorImg" />
-                <ProgressBar min={0} max={100} now={userItem?.rating} animated variant="success" />
-                <button>SCAREMETER!</button>
                 <button className="delete-btn" onClick={() => { handleDelete() }}>Delete</button>
             </section>
         </>
