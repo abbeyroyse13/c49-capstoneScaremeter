@@ -20,3 +20,18 @@ img {
 .remove-btn {
     background-color: red;
 }
+
+.homePage,
+.horrorFaves,
+.horrorPosts {
+    background-color: black;
+}
+
+.welcome {
+    color: brown;
+    text-align: center;
+}
+
+.title {
+    color: brown;
+}

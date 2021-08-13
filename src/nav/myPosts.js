@@ -22,16 +22,18 @@ export const MyPosts = () => {
 
     return (
         <>
+            <div className="horrorPosts">
             <button type="button"
                 className="add-btn"
                 onClick={() => { history.push("/horrorItems/add") }}>
                 +
             </button>
-            <h1 className="">Horror Item Posts</h1>
+            <h1 className="title">Horror Item Posts</h1>
             <div>
                 {horrorItems.map(horrorItemPost => {
                     return <HorrorItemCard key={horrorItemPost.id} horrorItem={horrorItemPost} />
                 })}
+            </div>
             </div>
         </>
     )

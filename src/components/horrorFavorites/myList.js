@@ -17,15 +17,17 @@ export const MyList = () => {
 
     return (
         <>
+        <div className="horrorFaves">
     <div className="horrorItemFaves">
                 {console.log("HorrorItemFaves: Render", horrorItemFavorites)}
-                <h2>Horror Item Faves</h2>
+                <h2 className="title">Horror Item Faves</h2>
                 {
                     horrorItemFavorites.map(horrorItemFavorite => {
                         { console.log("horrorItemFave", horrorItemFavorite) }
                         return <HorrorFavoritesCard key={horrorItemFavorite.id} horrorItemFavorite={horrorItemFavorite} />
                     })
                 }
+            </div>
             </div>
         </>
     )
