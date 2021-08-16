@@ -6,11 +6,11 @@ import ReactDOM from "react-dom";
 // styling of the actual progress bar 
 const containerStyle = {
     border: '1px solid silver',
-    background: '#ededed'
+    background: 'lime'
 };
 // more styling (animation)
 const contentStyle = {
-    background: '#00cc00',
+    background: 'red',
     height: '24px',
     textAlign: 'center',
     lineHeight: '24px',
@@ -41,11 +41,11 @@ export const ScareMeter = () => {
             <br />
             <div>
                 {/* these buttons are what causes the state of the progress bar to change */}
-                <button onClick={() => setProgress(0)}>Not Scary :|</button>
-                <button onClick={() => setProgress(25)}>Has Its Moments</button>
-                <button onClick={() => setProgress(50)}>Mediocre Scares :/</button>
-                <button onClick={() => setProgress(75)}>Decent Scares</button>
-                <button onClick={() => setProgress(100)}>MADE ME SCREAM :O</button>
+                <button className="no" onClick={() => setProgress(0)}>Not Scary 😑</button>
+                <button className="meh" onClick={() => setProgress(25)}>Has Its Moments 😅</button>
+                <button className="okay" onClick={() => setProgress(50)}>Mediocre Scares 😕</button>
+                <button className="good" onClick={() => setProgress(75)}>Decent Scares 😵</button>
+                <button className="scary" onClick={() => setProgress(100)}>MADE ME SCREAM 😱</button>
             </div>
         </div>
     );

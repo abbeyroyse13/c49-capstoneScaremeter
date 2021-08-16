@@ -20,7 +20,7 @@ export const MyList = () => {
         <div className="horrorFaves">
     <div className="horrorItemFaves">
                 {console.log("HorrorItemFaves: Render", horrorItemFavorites)}
-                <h2 className="title">Horror Item Faves</h2>
+                <h2 className="title">My Favorites</h2>
                 {
                     horrorItemFavorites.map(horrorItemFavorite => {
                         { console.log("horrorItemFave", horrorItemFavorite) }
