@@ -27,13 +27,13 @@ export const HorrorItemList = () => {
         <>
             <div className="homePage">
             <h1 className="welcome">Welcome to ScareMeter! Browse All Content Below! Our Content Includes:</h1>
-            <button>Movies</button>
-            <button>Shows</button>
-            <button>Games</button>
-            <button>Books</button>
+            <button className="movieButton">Movies</button>
+            <button className="showButton">Shows</button>
+            <button className="gameButton">Games</button>
+            <button className="bookButton">Books</button>
             <div className="horrorItems">
                 {console.log("HorrorItemList: Render", horrorItems)}
-                <h2 className="title">Horror Items</h2>
+                <h2 className="title"></h2>
                 {
                     horrorItems?.map(horrorItem => {
                         { console.log("horrorItem", horrorItem) }

@@ -6,8 +6,18 @@
     border-radius: 25px;
 }
 
+.horrorDetail {
+    background-color: black;
+}
+
+.horrortitle,
+.description,
+.releaseDate {
+    color: cyan;
+}
+
 .horrorItemCard {
-    flex-wrap: wrap;
+    margin-left: 100px;
 }
 
 img {
@@ -15,14 +25,32 @@ img {
     height: auto;
 }
 
-.save-btn,
+.navLink {
+    margin-left: 300px;
+}
+
 .add-btn {
     background-color: chartreuse;
 }
 
-.delete-btn,
+.save-btn {
+    background-color: chartreuse;
+    margin-left: -200px;
+    margin-top: 200px;
+    position: absolute;
+}
+
+.delete-btn {
+    background-color: red;
+    margin-top: 166px;
+    position: absolute;
+}
+
 .remove-btn {
     background-color: red;
+    margin-left: -200px;
+    margin-top: 200px;
+    position: absolute;
 }
 
 .homePage,
@@ -36,6 +64,24 @@ img {
     text-align: center;
 }
 
+.movieButton,
+.showButton,
+.gameButton,
+.bookButton {
+    background-color: #CC5803;
+    margin-left: 230px;
+}
+
+.no,
+.meh,
+.okay,
+.good,
+.scary {
+    background-color: cornflowerblue;
+    margin-left: 100px;
+}
+
 .title {
     color: brown;
+    margin-left: 90px;
 }
