@@ -6,6 +6,10 @@
     border-radius: 25px;
 }
 
+.horrorItemCard {
+    flex-wrap: wrap;
+}
+
 img {
     width: 10%;
     height: auto;
